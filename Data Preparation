@@ -1,0 +1,8 @@
+ Check the data
+print(df.head())
+
+ Set 'State' column as the index
+df.set_index('State', inplace=True)
+
+ Calculate total GDP for each state
+df['TotalGDP'] = df.sum(axis=1)
