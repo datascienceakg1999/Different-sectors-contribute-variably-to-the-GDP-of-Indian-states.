@@ -1,0 +1,17 @@
+Calculate the percentage contribution of each sector
+df['Agriculture_Percentage'] = (df['Agriculture'] / df['TotalGDP']) * 100
+df['Industry_Percentage'] = (df['Industry'] / df['TotalGDP']) * 100
+df['Services_Percentage'] = (df['Services'] / df['TotalGDP']) * 100
+
+Print the DataFrame to see the calculated percentages
+print(df)
+
+ Plot the sectoral contributions
+df[['Agriculture_Percentage', 'Industry_Percentage', 'Services_Percentage']].plot(kind='bar', stacked=True, figsize=(10, 6))
+
+plt.title('Sectoral Contributions to GDP of Selected States')
+plt.xlabel('State')
+plt.ylabel('Percentage Contribution')
+plt.legend(title='Sector')
+plt.grid(True)
+plt.show()
