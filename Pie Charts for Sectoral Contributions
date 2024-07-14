@@ -1,0 +1,14 @@
+Plot pie charts for each state
+fig, axes = plt.subplots(1, 5, figsize=(20, 5))
+
+for i, state in enumerate(df.index):
+    df.loc[state, ['Agriculture_Percentage', 'Industry_Percentage', 'Services_Percentage']].plot(
+        kind='pie', 
+        ax=axes[i], 
+        autopct='%1.1f%%', 
+        startangle=90, 
+        title=state
+    )
+
+plt.tight_layout()
+plt.show()
